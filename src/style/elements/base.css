@@ -2,6 +2,6 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: #1c1107;
+  background: var(--clr-dark-brown);
   font-family: 'Playfair Display', serif;
 }
