@@ -5,3 +5,7 @@ body {
   background: var(--clr-dark-brown);
   font-family: 'Playfair Display', serif;
 }
+
+input, button {
+  font-family: 'Playfair Display', serif;
+}
