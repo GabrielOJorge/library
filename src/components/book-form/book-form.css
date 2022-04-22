@@ -1,0 +1,39 @@
+.book-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 25vh;
+
+  background-color: var(--clr-gold);
+  border-radius: 1rem;
+  padding: 3rem 2rem;
+  gap: 3.5rem;
+  box-shadow: 3px 3px 5px var(--clr-shadow);
+}
+
+.book-form button {
+  width: 100%;
+  background: var(--clr-btn);
+  padding: .5rem 0;
+  font-size: clamp(1.4rem, 1.8rem, 2vw);
+  font-weight: 700;
+  box-shadow: 3px 3px 5px var(--clr-shadow-2);
+  transition: background .3s ease-in;
+}
+
+.book-form button:hover {
+  background-color: #fde5b8;
+}
+
+.book-form > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.book-form label {
+  font-size: clamp(1.4rem, 1.6rem, 2vw);
+  font-weight: 600;
+}

@@ -10,18 +10,24 @@ input, button {
   font-family: 'Playfair Display', serif;
 }
 
+input {
+  border-style: none;
+  padding: .5rem 1rem;
+  border-radius: .5rem;
+  font-size: clamp(1.4rem, 1.6rem, 2vw);
+}
+
 button {
   border-style: none;
   border-radius: .5rem;
+  cursor: pointer;
 }
 
-input {
-  border-style: none;
-  padding: .5rem;
-  border-radius: .5rem;
+input:focus {
+  outline: 2px solid var(--clr-outline);
 }
 
 h2 {
-  font-size: clamp(1.6rem, 2rem, 2vw);
+  font-size: clamp(2rem, 2.5rem, 4vw);
   font-weight: 600;
 }
