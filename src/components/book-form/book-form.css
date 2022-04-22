@@ -4,6 +4,7 @@
   align-items: center;
   position: absolute;
   top: 25vh;
+  visibility: hidden;
 
   background-color: var(--clr-gold);
   border-radius: 1rem;
