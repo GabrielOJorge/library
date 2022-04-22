@@ -1,16 +1,24 @@
+#form-bg {
+  display: none;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+}
+
 .book-form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: absolute;
   top: 25vh;
-  visibility: hidden;
+  position: absolute;
 
   background-color: var(--clr-gold);
   border-radius: 1rem;
   padding: 3rem 2rem;
   gap: 3.5rem;
   box-shadow: 3px 3px 5px var(--clr-shadow);
+  transition: transform .3s ease-out;
+  transform: scale(0);
 }
 
 .book-form button {

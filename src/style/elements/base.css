@@ -1,9 +1,17 @@
 body {
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   background: var(--clr-dark-brown);
   font-family: 'Playfair Display', serif;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: filter .3s ease-out;
 }
 
 input, button {

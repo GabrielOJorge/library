@@ -1,4 +1,7 @@
 const bookForm = document.getElementById("book-form");
+const addBtn = document.getElementById("add-btn");
+const formBg = document.getElementById("form-bg");
+const main = document.querySelector("main");
 
 let myLibrary = [];
 
@@ -24,9 +27,24 @@ function addBookToLibrary() {
   myLibrary.map(book => console.log(book.title));
 }
 
+const displayBookForm = () => {
+  main.style.filter = "blur(3px)";
+  formBg.style.display = "initial";
+  bookForm.style.transform = "scale(1)";
+};
+
+const hideFormBg = () => {
+  main.style.filter = "blur(0px)";
+  formBg.style.display = "none";
+  bookForm.style.transform = "scale(0)"
+};
+
 bookForm.addEventListener("submit", e => {
   e.preventDefault();
   addBookToLibrary();
 });
+
+addBtn.addEventListener("click", displayBookForm);
+formBg.addEventListener("click", hideFormBg);
 
 // const inputsValues = Array.from(document.querySelectorAll("#book-form input")).reduce((acc, input) => ({...acc, [input.id]: input.value}), {});
