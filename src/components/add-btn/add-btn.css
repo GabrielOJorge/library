@@ -1,0 +1,18 @@
+.add-btn {
+  position: relative;
+  top: 25vh;
+
+  background: none;
+  border: 1px solid var(--clr-btn);
+  color: var(--clr-btn);
+  padding: .5rem 1rem;
+  font-size: clamp(2rem, 2.4rem, 3vw);
+  font-weight: 500;
+
+  transition: all .3s ease-in;
+}
+
+.add-btn:hover {
+  background-color: var(--clr-btn);
+  color: var(--clr-dark-brown);
+}
