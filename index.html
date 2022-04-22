@@ -11,15 +11,19 @@
   <link rel="stylesheet" href="src/style/generic/reset.css">
   <link rel="stylesheet" href="src/style/elements/base.css">
   <link rel="stylesheet" href="src/style/settings/colors.css">
+  <link rel="stylesheet" href="src/components/book-form/book-form.css">
 </head>
 <body>
-  <form action="#" method="post" id="book-form">
-    <input type="text" name="title" id="title" placeholder="Title">
-    <input type="text" name="author" id="author" placeholder="Author">
-    <input type="number" name="pages" id="pages" placeholder="Pages">
+  <form action="#" method="post" class="book-form" id="book-form">
+    <h2>Add a new book</h2>
     <div>
-      <label for="have-read">Have you read it?</label>
-      <input type="checkbox" name="have-read" id="have-read">
+      <input type="text" name="title" id="title" placeholder="Title">
+      <input type="text" name="author" id="author" placeholder="Author">
+      <input type="number" name="pages" id="pages" placeholder="Pages">
+      <div>
+        <label for="have-read">Have you read it?</label>
+        <input type="checkbox" name="have-read" id="have-read">
+      </div>
     </div>
 
     <button type="submit">Submit</button>
