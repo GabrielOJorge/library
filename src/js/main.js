@@ -37,12 +37,11 @@ const createBookCard = (title, author, pages, haveRead) => {
   const divBtns = document.createElement("div");
 
   const readBtn = document.createElement("button");
-  readBtn.classList.add("read-btn");
   haveRead ? readBtn.textContent = "Read" : readBtn.textContent = "Not read";
 
   const delBtn = document.createElement("button");
-  delBtn.classList.add("del-btn");
   delBtn.textContent = "Delete";
+  delBtn.addEventListener("click", () => divBook.style.display = "none");
 
   divBtns.append(readBtn, delBtn);
 
