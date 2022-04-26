@@ -38,6 +38,9 @@ const createBookCard = (title, author, pages, haveRead) => {
 
   const readBtn = document.createElement("button");
   haveRead ? readBtn.textContent = "Read" : readBtn.textContent = "Not read";
+  readBtn.addEventListener("click", () => {
+    readBtn.textContent === "Read" ? readBtn.textContent = "Not read" : readBtn.textContent = "Read";
+  });
 
   const delBtn = document.createElement("button");
   delBtn.textContent = "Delete";
