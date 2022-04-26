@@ -17,6 +17,10 @@ main {
   gap: 5rem;
 }
 
+main.active {
+  filter: blur(3px);
+}
+
 main > div {
   width: 100%;
   display: flex;

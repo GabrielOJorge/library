@@ -76,15 +76,15 @@ const addBookToLibrary = () => {
 }
 
 const displayBookForm = () => {
-  main.style.filter = "blur(3px)";
-  formBg.style.display = "initial";
-  bookForm.style.transform = "scale(1)";
+  main.classList.add("active");
+  formBg.classList.add("active");
+  bookForm.classList.add("active");
 };
 
 const hideForm = () => {
-  main.style.filter = "blur(0px)";
-  formBg.style.display = "none";
-  bookForm.style.transform = "scale(0)"
+  main.classList.remove("active");
+  formBg.classList.remove("active");
+  bookForm.classList.remove("active");
 };
 
 bookForm.addEventListener("submit", e => {

@@ -5,6 +5,10 @@
   height: 100vh;
 }
 
+#form-bg.active {
+  display: initial;
+}
+
 .book-form {
   display: flex;
   flex-direction: column;
@@ -19,6 +23,10 @@
   box-shadow: 3px 3px 5px var(--clr-shadow);
   transition: transform .3s ease-out;
   transform: scale(0);
+}
+
+.book-form.active {
+  transform: scale(1);
 }
 
 .book-form button {
