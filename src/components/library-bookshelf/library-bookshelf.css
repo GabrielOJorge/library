@@ -1,0 +1,10 @@
+.library-bookshelf {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: 2rem;
+  text-align: center;
+}
+
+.library-bookshelf div:nth-child(3) {
+  width: 100%;
+}
