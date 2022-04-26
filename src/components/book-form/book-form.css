@@ -31,6 +31,10 @@
   transition: background .3s ease-in;
 }
 
+.book-form button:active {
+  transform: translateY(.1rem);
+}
+
 .book-form button:hover {
   background-color: #fde5b8;
 }
@@ -45,4 +49,9 @@
 .book-form label {
   font-size: clamp(1.4rem, 1.6rem, 2vw);
   font-weight: 600;
+}
+
+.book-form.-book {
+  transform: scale(1);
+  position: static;
 }
