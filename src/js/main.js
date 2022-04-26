@@ -10,21 +10,67 @@ function Book(title, author, pages, haveRead) {
   this.author = author;
   this.pages = pages;
   this.haveRead = haveRead;
+
+  createBookCard(title, author, pages, haveRead);
 }
 
-function addBookToLibrary() {
+const createBookCard = (title, author, pages, haveRead) => {
+  const divTitleAuthor = document.createElement("div");
+
+  const bookTitle = document.createElement("h2");
+  bookTitle.textContent = title;
+
+  const By = document.createElement("h2");
+  By.textContent = "By";
+
+  const bookAuthor = document.createElement("h2");
+  bookAuthor.textContent = author;
+
+  divTitleAuthor.append(bookTitle, By, bookAuthor);
+
+  const divPages = document.createElement("div");
+  const bookPages = document.createElement("h2");
+  bookPages.textContent = pages;
+
+  divPages.appendChild(bookPages);
+
+  const divBtns = document.createElement("div");
+
+  const readBtn = document.createElement("button");
+  readBtn.classList.add("read-btn");
+  haveRead ? readBtn.textContent = "Read" : readBtn.textContent = "Not read";
+
+  const delBtn = document.createElement("button");
+  delBtn.classList.add("del-btn");
+  delBtn.textContent = "Delete";
+
+  divBtns.append(readBtn, delBtn);
+
+  const divBook = document.createElement("div");
+  divBook.classList.add("book-form", "-book");
+  divBook.append(divTitleAuthor, divPages, divBtns)
+
+  const libraryBookshelf = document.querySelector(".library-bookshelf");
+
+  libraryBookshelf.append(divBook);
+}
+
+const addBookToLibrary = () => {
   const titleInputValue = document.getElementById("title").value;
   const authorInputValue = document.getElementById("author").value;
   const pagesInputValue = Number(document.getElementById("pages").value);
-  const haveReadInputValue = Boolean(document.getElementById("have-read").value);
+  const haveReadInputValue = document.getElementById("have-read").checked;
 
+  const formControls = document.querySelectorAll("input");
   
   const newBook = new Book(titleInputValue, authorInputValue, pagesInputValue, haveReadInputValue);
-  console.log(newBook);
-
   myLibrary.push(newBook);
 
-  myLibrary.map(book => console.log(book.title));
+  formControls.forEach(input => {
+    input.value = null
+    input.checked = false;
+    hideForm();
+  });
 }
 
 const displayBookForm = () => {
@@ -33,7 +79,7 @@ const displayBookForm = () => {
   bookForm.style.transform = "scale(1)";
 };
 
-const hideFormBg = () => {
+const hideForm = () => {
   main.style.filter = "blur(0px)";
   formBg.style.display = "none";
   bookForm.style.transform = "scale(0)"
@@ -45,6 +91,6 @@ bookForm.addEventListener("submit", e => {
 });
 
 addBtn.addEventListener("click", displayBookForm);
-formBg.addEventListener("click", hideFormBg);
+formBg.addEventListener("click", hideForm);
 
 // const inputsValues = Array.from(document.querySelectorAll("#book-form input")).reduce((acc, input) => ({...acc, [input.id]: input.value}), {});
