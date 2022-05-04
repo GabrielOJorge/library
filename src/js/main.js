@@ -84,7 +84,7 @@ const displayBookForm = () => {
 const hideForm = () => {
   main.classList.remove("active");
   formBg.classList.remove("active");
-  bookForm.classList.remove("active");
+  bookForm.classList.remobve("active");
 };
 
 bookForm.addEventListener("submit", e => {
@@ -94,5 +94,3 @@ bookForm.addEventListener("submit", e => {
 
 addBtn.addEventListener("click", displayBookForm);
 formBg.addEventListener("click", hideForm);
-
-// const inputsValues = Array.from(document.querySelectorAll("#book-form input")).reduce((acc, input) => ({...acc, [input.id]: input.value}), {});
