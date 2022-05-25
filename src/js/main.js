@@ -84,7 +84,7 @@ const displayBookForm = () => {
 const hideForm = () => {
   main.classList.remove("active");
   formBg.classList.remove("active");
-  bookForm.classList.remobve("active");
+  bookForm.classList.remove("active");
 };
 
 bookForm.addEventListener("submit", e => {
