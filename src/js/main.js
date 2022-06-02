@@ -5,13 +5,13 @@ const main = document.querySelector("main");
 
 let myLibrary = [];
 
-function Book(title, author, pages, haveRead) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.haveRead = haveRead;
-
-  createBookCard(title, author, pages, haveRead);
+class Book {
+  constructor (title, author, pages, haveRead) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.haveRead = haveRead;
+  }
 }
 
 const createBookCard = (title, author, pages, haveRead) => {
@@ -69,10 +69,12 @@ const addBookToLibrary = () => {
   myLibrary.push(newBook);
 
   formControls.forEach(input => {
-    input.value = null
+    input.value = null;
     input.checked = false;
     hideForm();
   });
+
+  createBookCard(titleInputValue, authorInputValue, pagesInputValue, haveReadInputValue);
 }
 
 const displayBookForm = () => {
