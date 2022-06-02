@@ -68,11 +68,8 @@ const addBookToLibrary = () => {
   const newBook = new Book(titleInputValue, authorInputValue, pagesInputValue, haveReadInputValue);
   myLibrary.push(newBook);
 
-  formControls.forEach(input => {
-    input.value = null;
-    input.checked = false;
-    hideForm();
-  });
+  cleanForm();
+  hideForm();
 
   createBookCard(titleInputValue, authorInputValue, pagesInputValue, haveReadInputValue);
 }
@@ -87,6 +84,15 @@ const hideForm = () => {
   main.classList.remove("active");
   formBg.classList.remove("active");
   bookForm.classList.remove("active");
+};
+
+const cleanForm = () => {
+  const formControls = document.querySelectorAll("input");
+
+  formControls.forEach(input => {
+    input.value = null
+    input.checked = false;
+  });
 };
 
 bookForm.addEventListener("submit", e => {
