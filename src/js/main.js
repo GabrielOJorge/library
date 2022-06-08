@@ -63,8 +63,6 @@ const addBookToLibrary = () => {
   const pagesInputValue = Number(document.getElementById("pages").value);
   const haveReadInputValue = document.getElementById("have-read").checked;
 
-  const formControls = document.querySelectorAll("input");
-  
   const newBook = new Book(titleInputValue, authorInputValue, pagesInputValue, haveReadInputValue);
   myLibrary.push(newBook);
 
