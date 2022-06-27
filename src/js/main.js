@@ -3,6 +3,11 @@ const addBtn = document.getElementById("add-btn");
 const formBg = document.getElementById("form-bg");
 const main = document.querySelector("main");
 
+const titleInput = document.getElementById('title');
+const authotInput = document.getElementById('author');
+const pagesInput = document.getElementById('pages');
+const inputElements = document.querySelectorAll('input');
+
 let myLibrary = [];
 
 class Book {
@@ -92,6 +97,38 @@ const cleanForm = () => {
     input.checked = false;
   });
 };
+
+inputElements.forEach(input => {
+  let message = '';
+  
+  switch (input.id) {
+    case 'title':
+      message = 'Enter the title of the book!';
+      break;
+      
+    case 'author':
+      message = "Enter the author's name!";
+      break;
+    
+    case 'pages':
+      message = 'Enter the number of pages!';
+      break;
+  }
+  
+  input.addEventListener('input', () => {
+    input.setCustomValidity('');
+    input.checkValidity();
+  });
+
+  input.addEventListener('invalid', () => {
+    if (input.value === '') {
+      input.setCustomValidity(message);
+      input.classList.add('error');
+    }
+  });
+
+  bookForm.addEventListener("submit", () => input.classList.remove('error'));
+});
 
 bookForm.addEventListener("submit", e => {
   e.preventDefault();

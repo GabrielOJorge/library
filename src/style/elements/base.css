@@ -40,14 +40,26 @@ input {
   font-size: clamp(1.4rem, 1.6rem, 2vw);
 }
 
+input:focus {
+  outline: 2px solid var(--clr-outline);
+}
+
+.error {
+  outline: 2px solid red;
+}
+
+input:valid {
+  outline: none;
+}
+
+input[type="checkbox"]:valid {
+  outline: none;
+}
+
 button {
   border-style: none;
   border-radius: .5rem;
   cursor: pointer;
-}
-
-input:focus {
-  outline: 2px solid var(--clr-outline);
 }
 
 h2 {
